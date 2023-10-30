@@ -27,7 +27,7 @@ function App() {
 
   const initPayment = async (data) => {
     try {
-      const response = await axios.post("https://payment-gateway-app-uadq.vercel.app/api/payment/orders", {
+      const response = await axios.post("https://mohammed-imrankhan-payment.onrender.com/api/payment/orders", {
         amount: data.amount,
       });
       const orderId = response.data.data.id;
@@ -61,7 +61,7 @@ function App() {
 
   const handlePayment = async (book) => {
     try {
-      const response = await axios.post("https://payment-gateway-app-uadq.vercel.app/api/payment/orders", {
+      const response = await axios.post("https://mohammed-imrankhan-payment.onrender.com/api/payment/orders", {
         amount: book.price,
       });
       const orderId = response.data.data.id;
