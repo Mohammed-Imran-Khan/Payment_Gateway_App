@@ -5,29 +5,29 @@ import "./App.css";
 function App() {
   const [books, setBooks] = useState([
     {
-      name: "Apple iPhone 13 (256GB)",
-      description: "The latest iPhone with Pro features.",
-      img: "https://m.media-amazon.com/images/I/315oQlfQ6WL._SY445_SX342_QL70_FMwebp_.jpg",
-      price: 64999,
+      name: "Apple Watch SE (2nd Gen)",
+      description: "Smart Watch w/Starlight Aluminium Case.",
+      img: "https://m.media-amazon.com/images/I/71YdE55GwjL._SX522_.jpg",
+      price: 24999,
     },
     {
-      name: "Apple iPhone 12 (256GB)",
-      description: "A powerful iPhone with great features.",
-      img: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._SX679_.jpg",
-      price: 65999,
+      name: "Apple AirPods Pro",
+      description: "Active Noise Cancellation reduces unwanted background noise.",
+      img: "https://m.media-amazon.com/images/I/61sRKTAfrhL._SX679_.jpg",
+      price: 18499,
     },
 
     {
-      name: "Apple iPhone 14 (128 GB)",
-      description: "A larger iPhone with Pro capabilities.",
-      img: "https://m.media-amazon.com/images/I/31MX9scnEzL._SY445_SX342_QL70_FMwebp_.jpg",
-      price: 119999,
+      name: "Apple iPhone 13 (128GB)",
+      description: "6.1-inch (15.5 cm diagonal) Super Retina XDR display.",
+      img: "https://m.media-amazon.com/images/I/314Rp+8XKWL._SX342_SY445_.jpg",
+      price: 50499,
     }
   ]);
 
   const initPayment = async (data) => {
     try {
-      const response = await axios.post("https://razorpay-mern.onrender.com/api/payment/orders", {
+      const response = await axios.post("https://payment-gateway-app-uadq.vercel.app/api/payment/orders", {
         amount: data.amount,
       });
       const orderId = response.data.data.id;
@@ -61,7 +61,7 @@ function App() {
 
   const handlePayment = async (book) => {
     try {
-      const response = await axios.post("https://razorpay-mern.onrender.com/api/payment/orders", {
+      const response = await axios.post("https://payment-gateway-app-uadq.vercel.app/api/payment/orders", {
         amount: book.price,
       });
       const orderId = response.data.data.id;
