@@ -21,6 +21,13 @@
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 }
+body {
+  background-image: url("/amazon-ad.jpg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-position: center center;
+}
 
 .book_name {
 	font-size: 20px;
